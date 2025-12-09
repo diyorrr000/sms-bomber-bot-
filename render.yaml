@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: sms-bomber-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --threads 4 --timeout 120
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: WEB_APP_URL
+        fromService:
+          type: web
+          name: sms-bomber-bot
+          property: url
+    plan: free
+    autoDeploy: true
