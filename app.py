@@ -915,7 +915,7 @@ def send_welcome(message):
 
 ⚠️ *Diqqat:* Faqat o'quv maqsadlarida foydalaning!
 
-📞 *Admin:* @DicoSupport
+📞 *Admin:* @zafarvc
 """
     
     try:
